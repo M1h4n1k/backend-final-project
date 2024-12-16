@@ -1,0 +1,95 @@
+
+### Register admin
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "adminadmin",
+    "password": "adminadmin",
+    "role": "admin"
+}
+
+### Login admin
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "adminadmin",
+    "password": "adminadmin"
+}
+
+### Register regular
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "useruser",
+    "password": "useruser",
+    "role": "regular"
+}
+
+### Login regular
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "useruser",
+    "password": "useruser"
+}
+
+### GET request to retrieve all items
+GET http://localhost:3000/items
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTZiOTdlMDhjODRmMDdkNGJjN2FjMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzMzNzM3MzkzLCJleHAiOjE3MzM3NDA5OTN9.6m_5LlK8BJ5xn8WCxO_jrBRBFGU6sZSTAymyDpZ2mAs
+
+### GET with filters
+GET http://localhost:3000/items?status=todo
+
+### GET request to retrieve a specific item by ID
+GET http://localhost:3000/items/675dd3df6d057d4b659a637c
+
+### GET with bad id
+GET http://localhost:3000/items/67446bd9d8446eca23fac443
+
+### POST request to create a new item
+POST http://localhost:3000/items
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTZiOTdhMDhjODRmMDdkNGJjN2FiZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMzczNzQxNiwiZXhwIjoxNzMzNzQxMDE2fQ.ZCD87GBGY2N2RybyC9ptg0_F761NiaoOXluYRdwPAMw
+
+{
+    "title": "new"
+}
+
+### POST to create a new item with invalid data
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+    "title": "",
+    "status": "zczxc",
+    "due": "2025-01-01"
+}
+
+### PUT request to update an item
+PUT http://localhost:3000/items/675dd3df6d057d4b659a637c
+Content-Type: application/json
+
+{
+    "title": "new",
+    "status": "in-progress"
+}
+
+### DELETE request to delete an item
+DELETE http://localhost:3000/items/675dd4a0f93ece2cb213b45f
+
+### GET to random handle
+GET http://localhost:3000/testqwerty
+
+
+### Login Test - Invalid Credentials
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "zxczxc",
+    "password": "ghoul"
+}
