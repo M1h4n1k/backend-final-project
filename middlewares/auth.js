@@ -18,7 +18,7 @@ const authenticate = (roles) => {
     try {
       decoded = jwt.verify(token, JWT_SECRET);
     } catch (err) {
-      res.status(401).json({ error: "Invalid or expired token" });
+      return res.status(401).json({ error: "Invalid or expired token" });
     }
 
     req.user = decoded;

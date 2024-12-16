@@ -39,29 +39,33 @@ Content-Type: application/json
 
 ### GET request to retrieve all items
 GET http://localhost:3000/items
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTZiOTdlMDhjODRmMDdkNGJjN2FjMiIsInJvbGUiOiJyZWd1bGFyIiwiaWF0IjoxNzMzNzM3MzkzLCJleHAiOjE3MzM3NDA5OTN9.6m_5LlK8BJ5xn8WCxO_jrBRBFGU6sZSTAymyDpZ2mAs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 ### GET with filters
 GET http://localhost:3000/items?status=todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 ### GET request to retrieve a specific item by ID
 GET http://localhost:3000/items/675dd3df6d057d4b659a637c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 ### GET with bad id
 GET http://localhost:3000/items/67446bd9d8446eca23fac443
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 ### POST request to create a new item
 POST http://localhost:3000/items
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTZiOTdhMDhjODRmMDdkNGJjN2FiZiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczMzczNzQxNiwiZXhwIjoxNzMzNzQxMDE2fQ.ZCD87GBGY2N2RybyC9ptg0_F761NiaoOXluYRdwPAMw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 {
-    "title": "new"
+    "title": "new 123"
 }
 
 ### POST to create a new item with invalid data
 POST http://localhost:3000/items
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 {
     "title": "",
@@ -70,16 +74,18 @@ Content-Type: application/json
 }
 
 ### PUT request to update an item
-PUT http://localhost:3000/items/675dd3df6d057d4b659a637c
+PUT http://localhost:3000/items/6760631b187c04211c1936d8
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 {
-    "title": "new",
-    "status": "in-progress"
+    "title": "new done",
+    "status": "done"
 }
 
 ### DELETE request to delete an item
-DELETE http://localhost:3000/items/675dd4a0f93ece2cb213b45f
+DELETE http://localhost:3000/items/6760631b187c04211c1936d8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWRkNTRmYjViYWZmOWI3NmY5YjI2MSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDM3MDA0NSwiZXhwIjoxNzM0MzczNjQ1fQ.sIotOv9ukBtKYBrBP0S3Vzea2GwuDw7xiBL7VV0ljas
 
 ### GET to random handle
 GET http://localhost:3000/testqwerty
